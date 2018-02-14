@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/NoticeBoardWPF/.vs/NoticeBoardWPF/v14
+/NoticeBoardWPF/NoticeBoardWPF/bin/Debug
+/NoticeBoardWPF/NoticeBoardWPF/obj/Debug
