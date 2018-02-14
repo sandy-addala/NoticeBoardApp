@@ -10,7 +10,7 @@
         Width="525" ResizeMode="NoResize" ShowInTaskbar="False"
         WindowStyle="None" Visibility="Visible" 
         ScrollViewer.HorizontalScrollBarVisibility="Auto"
-        Loaded="MyWindow_Loaded" AllowsTransparency="True">
+        Loaded="MyWindow_Loaded" AllowsTransparency="True" MouseEnter="Window_MouseEnter">
     <Window.Background>
         <SolidColorBrush Opacity="0.5" Color="#424242"/>
     </Window.Background>

@@ -114,5 +114,9 @@ namespace NoticeBoardWPF
             return unchecked((int)intPtr.ToInt64());
         }
 
+        private void Window_MouseEnter(object sender, MouseEventArgs e)
+        {
+            this.Focus();
+        }
     }
 }
