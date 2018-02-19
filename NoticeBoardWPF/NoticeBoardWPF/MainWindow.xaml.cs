@@ -4,8 +4,6 @@ using System.Windows.Input;
 using System.ComponentModel;
 using System.Windows.Interop;
 using System.Runtime.InteropServices;
-using System.Collections.Generic;
-using System.Windows.Media;
 
 namespace NoticeBoardWPF
 {
@@ -14,12 +12,11 @@ namespace NoticeBoardWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-
+        #region DLL Imports and flags.
         [DllImport("user32.dll")]
         public static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
         [DllImport("user32.dll")]
         public static extern IntPtr SetParent(IntPtr hWndChild, IntPtr hWndNewParent);
-
         [DllImport("user32.dll", EntryPoint = "SetWindowLongPtr", SetLastError = true)]
         private static extern IntPtr IntSetWindowLongPtr(IntPtr hWnd, int nIndex, IntPtr dwNewLong);
         [DllImport("user32.dll", EntryPoint = "SetWindowLong", SetLastError = true)]
@@ -28,6 +25,7 @@ namespace NoticeBoardWPF
         public static extern IntPtr GetWindowLong(IntPtr hWnd, int nIndex);
         [DllImport("kernel32.dll", EntryPoint = "SetLastError")]
         public static extern void SetLastError(int dwErrorCode);
+        
 
         [Flags]
         public enum ExtendedWindowStyles
@@ -39,39 +37,12 @@ namespace NoticeBoardWPF
         {
             GWL_EXSTYLE = (-20),
         }
+        #endregion
 
-        public MainWindow()
-        {
-            InitializeComponent();
-
-            //List<User> items = new List<User>();
-            Temp someClass = new Temp(listView);
-            someClass.Add();
-
-
-            Loaded += MyWindow_Loaded;
-            this.KeyDown += new KeyEventHandler(wnd_KeyDown);
-        }
-
-        private void MyWindow_Loaded(object sender, RoutedEventArgs e)
-        {
-            // Setting the window to the right side of the screen.
-            this.Top = 0;
-            this.Left = SystemParameters.PrimaryScreenWidth - this.Width;
-
-            // Sticking the app to the desktop.
-            IntPtr hWindow = FindWindow(null, "MainWindow");
-            IntPtr hDesktop = FindWindow("ProgMan", null);
-            SetParent(hWindow, hDesktop);
-
-            // Hiding the app in task manager and app swictcher(Alt + Tab).
-            WindowInteropHelper wndHelper = new WindowInteropHelper(this);
-            int exStyle = (int)GetWindowLong(wndHelper.Handle, (int)GetWindowLongFields.GWL_EXSTYLE);
-            exStyle |= (int)ExtendedWindowStyles.WS_EX_TOOLWINDOW;
-            SetWindowLong(wndHelper.Handle, (int)GetWindowLongFields.GWL_EXSTYLE, (IntPtr)exStyle);
-        }
-
-        // Disabling the Alt + F4.
+        #region Methods to stick app on the desktop and make it unclosable
+        /// <summary>
+        /// Disabling Alt + F4.
+        /// </summary>
         void wnd_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.System && e.SystemKey == Key.F4)
@@ -79,7 +50,9 @@ namespace NoticeBoardWPF
                 e.Handled = true;
             }
         }
-
+        /// <summary>
+        ///  
+        /// </summary>
         public static IntPtr SetWindowLong(IntPtr hWnd, int nIndex, IntPtr dwNewLong)
         {
             int error = 0;
@@ -113,10 +86,47 @@ namespace NoticeBoardWPF
         {
             return unchecked((int)intPtr.ToInt64());
         }
+        #endregion
+
+        public MainWindow()
+        {
+            InitializeComponent();
+            Temp someClass = new Temp(listView);
+            someClass.Add();
+
+            Loaded += MyWindow_Loaded;
+            this.KeyDown += wnd_KeyDown;
+        }
+
+        #region MainWindow Onload.
+        private void MyWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            // Setting the window to the right side of the screen.
+            this.Top = 0;
+            this.Left = SystemParameters.PrimaryScreenWidth - this.Width;
+
+            // Sticking the app to the desktop.
+            IntPtr hWindow = FindWindow(null, "MainWindow");
+            IntPtr hDesktop = FindWindow("ProgMan", null);
+            SetParent(hWindow, hDesktop);
+
+            // Hiding the app in task manager and app swictcher(Alt + Tab).
+            WindowInteropHelper wndHelper = new WindowInteropHelper(this);
+            int exStyle = (int)GetWindowLong(wndHelper.Handle, (int)GetWindowLongFields.GWL_EXSTYLE);
+            exStyle |= (int)ExtendedWindowStyles.WS_EX_TOOLWINDOW;
+            SetWindowLong(wndHelper.Handle, (int)GetWindowLongFields.GWL_EXSTYLE, (IntPtr)exStyle);
+        }
+        #endregion
 
         private void Window_MouseEnter(object sender, MouseEventArgs e)
         {
             this.Focus();
+        }
+
+        private void listView_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Temp someClass = new Temp(listView);
+            someClass.Add();
         }
     }
 }

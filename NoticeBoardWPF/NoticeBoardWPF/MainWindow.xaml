@@ -12,10 +12,10 @@
         ScrollViewer.HorizontalScrollBarVisibility="Auto"
         Loaded="MyWindow_Loaded" AllowsTransparency="True" MouseEnter="Window_MouseEnter">
     <Window.Background>
-        <SolidColorBrush Opacity="0.8" Color="#BDBDBD"/>
+        <SolidColorBrush Opacity="0.9" Color="#BDBDBD"/>
     </Window.Background>
     <Border Padding="5 5 0 0" Background="Transparent" BorderBrush="Transparent">
-        <ListView x:Name="listView" Margin="-5,-5,0,-5" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto" Background="Transparent" BorderBrush="Transparent" >
+        <ListView x:Name="listView" Margin="-5,-5,0,-5" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto" Background="Transparent" BorderBrush="Transparent" MouseEnter="listView_MouseEnter" >
             <ListView.Resources>
                 <Style TargetType="{x:Type ListViewItem}">
                     <Setter Property="Background" Value="White" />
@@ -23,13 +23,13 @@
                     <Setter Property="Template">
                         <Setter.Value>
                             <ControlTemplate TargetType="ListViewItem">
-                                <Border Opacity="0.9" Background="White">
+                                <Border Opacity="0.713" Background="#FFFFFF">
                                     <Grid AutomationProperties.IsOffscreenBehavior="Default" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Visible">
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="0.1*"/>
+                                            <ColumnDefinition Width="0.15*"/>
                                             <ColumnDefinition Width="5*"/>
                                             <ColumnDefinition Width="5*"/>
-                                            <ColumnDefinition Width="*"/>
+                                            
                                         </Grid.ColumnDefinitions>
                                         <Grid.RowDefinitions >
                                             <RowDefinition Height="Auto"/>
@@ -39,10 +39,9 @@
                                         <Rectangle Grid.Column="0" Grid.RowSpan="4" Fill="{Binding ColorHex}" />
                                         <TextBlock Grid.Row="0" Grid.Column="1"  Grid.ColumnSpan="2" Text="{Binding Sender}" FontSize="16" FontFamily="Arial"  FontWeight="Bold" Margin="5 5 0 0"/>
                                         <TextBlock Grid.Row="0" Grid.Column="2" FlowDirection="RightToLeft" Text="{Binding Date}" FontWeight="Bold" VerticalAlignment="Center" Margin="0 5 0 0"/>
-                                        <TextBlock Grid.Row="0" Grid.Column="3" FlowDirection="RightToLeft" Text="{Binding Time}" FontWeight="Bold" VerticalAlignment="Center" Margin="0 5 5 0"/>
-                                        <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Text="{Binding Subject}" FontSize="14" FontWeight="Bold" Margin="5 5 0 10"/>
-                                        <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" Text="{Binding Message}" TextWrapping="Wrap" 
-                                                 VerticalScrollBarVisibility="Auto" IsReadOnly="True" Background="#eee" Margin="5 0 5 5" Padding="2 0 5 0" ScrollViewer.CanContentScroll="True"/>
+                                        <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Subject}" FontSize="14" FontWeight="Bold" Margin="5 5 0 10"/>
+                                        <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Message}" TextWrapping="Wrap" 
+                                                 VerticalScrollBarVisibility="Auto" IsReadOnly="True" Background="WhiteSmoke" Margin="5 0 5 5" Padding="2 0 5 0" ScrollViewer.CanContentScroll="True"/>
                                     </Grid>
                                 </Border>
                             </ControlTemplate>
@@ -131,6 +130,7 @@
                     </Setter>
                 </Style>
             </ListView.Resources>
+
         </ListView>
     </Border>
 </Window>
