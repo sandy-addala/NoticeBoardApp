@@ -20,7 +20,7 @@ namespace NoticeBoardWPF
         {
             List<MessageItem> items = new List<MessageItem>();
 
-            for (int i = 1; i < 2; i++)
+            for (int i = 1; i < 20; i++)
             {
                 items.Add(new MessageItem() { Sender = "Kishore Babu Ithadi", Date = DateTime.Now.ToString("dd/MM/yy    HH:mm"), Subject = "C# Batch -1", Message = "Come to C-51 for session", ColorHex = "#D00000" });
                 items.Add(new MessageItem() { Sender = "Sailatha Kanumuri  ", Date = DateTime.Now.ToString("dddd, dd MMMM yyyy HH:mm"), Subject = "Session Topics", Message = "1.Delegates (Action,Func,Predicate, Multicast)\n2.Lamda Expression\n3.Anonymous Method\n4.Events", ColorHex = "#3AB795" });

@@ -125,8 +125,6 @@ namespace NoticeBoardWPF
 
         private void listView_MouseEnter(object sender, MouseEventArgs e)
         {
-            Temp someClass = new Temp(listView);
-            someClass.Add();
         }
     }
 }
