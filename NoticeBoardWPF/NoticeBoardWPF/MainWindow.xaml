@@ -11,11 +11,9 @@
         WindowStyle="None" Visibility="Visible" 
         ScrollViewer.HorizontalScrollBarVisibility="Auto"
         Loaded="MyWindow_Loaded" AllowsTransparency="True" MouseEnter="Window_MouseEnter">
-    <Window.Background>
-        <SolidColorBrush Opacity="0.9" Color="#BDBDBD"/>
-    </Window.Background>
-    
-    <local:TopMenu>
 
+    <local:TopMenu>
+        <local:MessageListControl />
     </local:TopMenu>
+    
 </Window>

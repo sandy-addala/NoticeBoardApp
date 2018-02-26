@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:NoticeBoardWPF"
              mc:Ignorable="d" 
-             Height="60"
+             Height="80"
              d:DesignHeight="60" d:DesignWidth="300">
 
     <UserControl.Resources>
@@ -15,7 +15,7 @@
                     <ControlTemplate TargetType="{x:Type ContentControl}">
 
                         <!-- Content -->
-                        <Border x:Name="background" Background="{StaticResource ForegroundLightBrush}">
+                        <Border Padding="0 0 0 1" x:Name="background" Background="{StaticResource ForegroundLightBrush}">
                             <Grid x:Name="container" Background="Transparent">
                                 <Grid.ColumnDefinitions>
                                     <!-- New Message Indicator Bar -->
@@ -23,16 +23,18 @@
                                     <ColumnDefinition Width="Auto" />
                                     <!-- Main content -->
                                     <ColumnDefinition Width="*" />
+
+                                    <ColumnDefinition Width="Auto" />
                                 </Grid.ColumnDefinitions>
 
                                 <!--Priority -->
-                                <Border Background="Red" 
-                                    Width="4"
+                                <Border Background="{Binding PriorityRGB}" 
+                                    Width="5"
                                     HorizontalAlignment="Left"
                                     />
 
                                 <!-- Profile picture padding -->
-                                <Border Grid.Column="0" Padding="8">
+                                <Border Grid.Column="0" Padding="12">
                                     <!-- Profile picture background -->
                                     <Border Background="{Binding ProfilePictureRGB}" 
                                         Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}"
@@ -42,8 +44,7 @@
                                                VerticalAlignment="Center"
                                                HorizontalAlignment="Center"
                                                Foreground="{StaticResource ForegroundLightBrush}"
-                                               FontSize="{StaticResource FontSizeAverage}"
-                                               FontFamily="{StaticResource LatoRegular}"
+                                               FontSize="18"
                                                />
                                     </Border>
                                 </Border>
@@ -54,14 +55,28 @@
                                         <!-- Name-->
                                         <TextBlock Text="{Binding Name}"
                                                 Foreground="{StaticResource WordBlueBrush}"
-                                                TextTrimming="CharacterEllipsis"
-                                                FontFamily="{StaticResource LatoRegular}"
                                                 />
                                         <!-- Message -->
-                                        <TextBlock Text="{Binding Message}"
+                                        <TextBlock Text="{Binding Subject}"
                                                Foreground="{StaticResource ForegroundDarkBrush}"
-                                               TextTrimming="CharacterEllipsis"
-                                               FontFamily="{StaticResource LatoRegular}"
+                                               />
+
+                                    </StackPanel>
+                                </Border>
+
+                                <Border Grid.Column="2" Padding="0 0 8 0">
+                                    <StackPanel VerticalAlignment="Center">
+                                        <!-- Name-->
+                                        <TextBlock Text="{Binding Date, FallbackValue=10/2/18}"
+                                                Foreground="{StaticResource WordBlueBrush}"
+                                                VerticalAlignment="Center"
+                                                HorizontalAlignment="Center"
+                                                />
+                                        <!-- Message -->
+                                        <TextBlock Text="{Binding Time, FallbackValue=10:24}"
+                                               Foreground="{StaticResource ForegroundDarkBrush}"
+                                                   VerticalAlignment="Center"
+                                                   HorizontalAlignment="Center"
                                                />
 
                                     </StackPanel>

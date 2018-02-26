@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controls\MessageListControl.xaml.cs">
+      <DependentUpon>MessageListControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\MessageListItemControl.xaml.cs">
       <DependentUpon>MessageListItemControl.xaml</DependentUpon>
     </Compile>
@@ -62,8 +65,14 @@
       <DependentUpon>TopMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="Temp.cs" />
+    <Compile Include="ViewModel\Design\MessageListDesignModel.cs" />
     <Compile Include="ViewModel\Design\MessageListItemDesignModel.cs" />
     <Compile Include="ViewModel\MessageListItemViewModel.cs" />
+    <Compile Include="ViewModel\MessageListViewModel.cs" />
+    <Page Include="Controls\MessageListControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\MessageListItemControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

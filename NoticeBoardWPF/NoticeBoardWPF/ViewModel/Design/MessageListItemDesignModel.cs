@@ -26,7 +26,7 @@ namespace NoticeBoardWPF
         {
             Initials = "SK";
             Name = "SaiLata Kanumuri";
-            Message = "Session Topics";
+            Subject = "Session Topics";
             ProfilePictureRGB = "#3099c5";
         }
 

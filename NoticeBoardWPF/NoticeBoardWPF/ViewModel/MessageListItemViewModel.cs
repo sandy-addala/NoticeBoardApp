@@ -16,7 +16,7 @@ namespace NoticeBoardWPF
         /// <summary>
         /// The latest message from this chat
         /// </summary>
-        public string Message { get; set; }
+        public string Subject { get; set; }
 
         /// <summary>
         /// The initials to show for the profile picture background
@@ -36,7 +36,7 @@ namespace NoticeBoardWPF
         /// <summary>
         /// True if there are unread messages in this chat 
         /// </summary>
-        public bool NewContentAvailable { get; set; }
+        public bool Isread { get; set; }
 
     }
 }
