@@ -91,8 +91,8 @@ namespace NoticeBoardWPF
         public MainWindow()
         {
             InitializeComponent();
-            Temp someClass = new Temp(listView);
-            someClass.Add();
+            //Temp someClass = new Temp(listView);
+            //someClass.Add();
 
             Loaded += MyWindow_Loaded;
             this.KeyDown += wnd_KeyDown;
