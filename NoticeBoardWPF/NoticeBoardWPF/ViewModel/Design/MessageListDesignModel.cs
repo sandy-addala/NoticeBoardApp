@@ -28,78 +28,84 @@ namespace NoticeBoardWPF
             {
                 new MessageListItemViewModel
                 {
-                    Name = "SaiLata Kanumuri",
+                    Sender = new User() { Name = "SaiLata Kanumuri"},
                     Initials = "SK",
                     Subject = "Session Topics",
-                    Message ="1.EF\n2.ADO.NET\n3.Disconnected MOdel\n4.fasdf",
+                    Message ="1.EF\n2.ADO.NET\n3.Connected Model\n4.Disconnected Model\n5.SQL",
                     ProfilePictureRGB = "#3099c5",
                     PriorityRGB = "#D00000"
                 },
                 new MessageListItemViewModel
                 {
-                    Name = "Jesse",
-                    Initials = "JA",
-                    Subject = "Hey dude, here are the new icons",
+                    Sender = new User() { Name = "Kishore Ithadi" },
+                    Initials = "KI",
+                    Subject = "Session - C# Batch - 1",
+                    Message ="Come to C-51 for session",
                     ProfilePictureRGB = "#fe4503",
                     PriorityRGB = "#3AB795"
                 },
                 new MessageListItemViewModel
                 {
-                    Name = "Parnell",
-                    Initials = "PL",
-                    Subject = "The new server is up, got 192.168.1.1",
+                    Sender = new User() { Name = "Shyam Palreddy"},
+                    Initials = "SP",
+                    Subject = "GGK -- ACS",
+                    Message = "I want to share some exciting news with everyone. Effective January 31st GGK Tech will be a part of American CyberSystems, Inc (ACS), a premier provider of IT Consulting, Engineering Consulting, Healthcare, Talent, and Workforce Management Solutions to Fortune 500 companies\nacross the globe. They are based in the United States with sizable presence around the world. GGK Tech will be a significant addition to the list of ACS brands and we will continue to function the same way we have been functioning over the last 14 years, except that we will be growing",
                     ProfilePictureRGB = "#00d405",
                     PriorityRGB = "#1B5299"
                 },
                 new MessageListItemViewModel
                 {
-                    Name = "Luke",
-                    Initials = "LM",
-                    Subject = "This chat app is awesome! I bet it will be fast too",
+                    Sender = new User() { Name = "SaiLata Kanumuri"},
+                    Initials = "SK",
+                    Subject = "Session Topics",
+                    Message ="1.EF\n2.ADO.NET\n3.Connected Model\n4.Disconnected Model\n5.SQL",
                     ProfilePictureRGB = "#3099c5",
-                    PriorityRGB = "#3E4E50"
+                    PriorityRGB = "#D00000"
                 },
                 new MessageListItemViewModel
                 {
-                    Name = "Jesse",
-                    Initials = "JA",
-                    Subject = "Hey dude, here are the new icons",
+                    Sender = new User() { Name = "Kishore Ithadi" },
+                    Initials = "KI",
+                    Subject = "Session - C# Batch - 1",
+                    Message ="Come to C-51 for session",
                     ProfilePictureRGB = "#fe4503",
                     PriorityRGB = "#3AB795"
                 },
                 new MessageListItemViewModel
                 {
-                    Name = "Parnell",
-                    Initials = "PL",
-                    Subject = "The new server is up, got 192.168.1.1",
+                    Sender = new User() { Name = "Shyam Palreddy"},
+                    Initials = "SP",
+                    Subject = "GGK -- ACS",
+                    Message = "I want to share some exciting news with everyone. Effective January 31st GGK Tech will be a part of American CyberSystems, Inc (ACS), a premier provider of IT Consulting, Engineering Consulting, Healthcare, Talent, and Workforce Management Solutions to Fortune 500 companies\nacross the globe. They are based in the United States with sizable presence around the world. GGK Tech will be a significant addition to the list of ACS brands and we will continue to function the same way we have been functioning over the last 14 years, except that we will be growing",
                     ProfilePictureRGB = "#00d405",
-                    PriorityRGB = "#3AB795"
-
+                    PriorityRGB = "#1B5299"
                 },
                 new MessageListItemViewModel
                 {
-                    Name = "Luke",
-                    Initials = "LM",
-                    Subject = "This chat app is awesome! I bet it will be fast too",
-                    ProfilePictureRGB = "#3099c5"
+                    Sender = new User() { Name = "SaiLata Kanumuri"},
+                    Initials = "SK",
+                    Subject = "Session Topics",
+                    Message ="1.EF\n2.ADO.NET\n3.Connected Model\n4.Disconnected Model\n5.SQL",
+                    ProfilePictureRGB = "#3099c5",
+                    PriorityRGB = "#D00000"
                 },
                 new MessageListItemViewModel
                 {
-                    Name = "Jesse",
-                    Initials = "JA",
-                    Subject = "Hey dude, here are the new icons",
+                    Sender = new User() { Name = "Kishore Ithadi" },
+                    Initials = "KI",
+                    Subject = "Session - C# Batch - 1",
+                    Message ="Come to C-51 for session",
                     ProfilePictureRGB = "#fe4503",
                     PriorityRGB = "#3AB795"
-
                 },
                 new MessageListItemViewModel
                 {
-                    Name = "Parnell",
-                    Initials = "PL",
-                    Subject = "The new server is up, got 192.168.1.1",
+                    Sender = new User() { Name = "Shyam Palreddy"},
+                    Initials = "SP",
+                    Subject = "GGK -- ACS",
+                    Message = "I want to share some exciting news with everyone. Effective January 31st GGK Tech will be a part of American CyberSystems, Inc (ACS), a premier provider of IT Consulting, Engineering Consulting, Healthcare, Talent, and Workforce Management Solutions to Fortune 500 companies\nacross the globe. They are based in the United States with sizable presence around the world. GGK Tech will be a significant addition to the list of ACS brands and we will continue to function the same way we have been functioning over the last 14 years, except that we will be growing",
                     ProfilePictureRGB = "#00d405",
-                    PriorityRGB = "#3AB795"
-
+                    PriorityRGB = "#1B5299"
                 },
             };
         }

@@ -12,8 +12,8 @@
         ScrollViewer.HorizontalScrollBarVisibility="Auto"
         Loaded="MyWindow_Loaded" AllowsTransparency="True" MouseEnter="Window_MouseEnter">
 
-    <local:TopMenu>
+    <local:WindowController>
         <local:MessageListControl />
-    </local:TopMenu>
+    </local:WindowController>
     
 </Window>

@@ -18,9 +18,9 @@ namespace NoticeBoardWPF
     /// <summary>
     /// Interaction logic for TopMenu.xaml
     /// </summary>
-    public partial class TopMenu : UserControl
+    public partial class WindowController : UserControl
     {
-        public TopMenu()
+        public WindowController()
         {
             InitializeComponent();
         }

@@ -13,7 +13,6 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type ContentControl}">
-
                         <!-- Content -->
                         <Border Padding="0 0 0 1" x:Name="background" Background="{StaticResource ForegroundLightBrush}">
                             <Grid x:Name="container" Background="Transparent">
@@ -22,21 +21,18 @@
                                     <RowDefinition Height="6*"/>
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
-                                    <!-- New Message Indicator Bar -->
                                     <!-- Profile picture -->
                                     <ColumnDefinition Width="Auto" />
-                                    <!-- Main content -->
+                                    <!-- The Name and Subject -->
                                     <ColumnDefinition Width="*" />
-
+                                    <!-- Date and Time -->
                                     <ColumnDefinition Width="Auto" />
                                 </Grid.ColumnDefinitions>
-
-                                <!--Priority -->
+                                <!-- Priority -->
                                 <Border Grid.RowSpan="2" Background="{Binding PriorityRGB}" 
                                     Width="5"
                                     HorizontalAlignment="Left"
                                     />
-
                                 <!-- Profile picture padding -->
                                 <Border Grid.Column="0" Padding="12">
                                     <!-- Profile picture background -->
@@ -52,47 +48,42 @@
                                                />
                                     </Border>
                                 </Border>
-
-                                <!-- Main content -->
+                                <!-- Name and Subject -->
                                 <Border Grid.Column="1" Padding="0 0 8 0">
                                     <StackPanel VerticalAlignment="Center">
                                         <!-- Name-->
-                                        <TextBlock Text="{Binding Name}"
+                                        <TextBlock Text="{Binding Sender.Name}" FontSize="16"
                                                 Foreground="{StaticResource WordBlueBrush}"
                                                 />
-                                        <!-- Message -->
+                                        <!-- Subject -->
                                         <TextBlock Text="{Binding Subject}"
-                                               Foreground="{StaticResource ForegroundDarkBrush}"
-                                               />
-
+                                                   Foreground="{StaticResource ForegroundDarkBrush}"/>
                                     </StackPanel>
                                 </Border>
-
+                                <!-- Date and Time -->
                                 <Border Grid.Column="2" Padding="0 0 8 0">
                                     <StackPanel VerticalAlignment="Center">
-                                        <!-- Name-->
+                                        <!-- Date -->
                                         <TextBlock Text="{Binding Date, FallbackValue=10/2/18}"
-                                                Foreground="{StaticResource WordBlueBrush}"
+                                                   Foreground="{StaticResource WordBlueBrush}"
                                                 VerticalAlignment="Center"
                                                 HorizontalAlignment="Center"
                                                 />
-                                        <!-- Message -->
+                                        <!-- Time -->
                                         <TextBlock Text="{Binding Time, FallbackValue=10:24}"
-                                               Foreground="{StaticResource ForegroundDarkBrush}"
+                                                   Foreground="{StaticResource WordBlueBrush}"
                                                    VerticalAlignment="Center"
                                                    HorizontalAlignment="Center"
                                                />
-
                                     </StackPanel>
                                 </Border>
-
-                                <TextBox Grid.Row="1" Grid.ColumnSpan="3" Text="{Binding Message}" VerticalScrollBarVisibility="Auto"> 
-                                   
+                                <!-- Meassage -->
+                                <TextBox Padding="12 0 0 0" Grid.Row="1" Grid.ColumnSpan="3"
+                                         TextWrapping="Wrap" Text="{Binding Message}"
+                                         VerticalScrollBarVisibility="Auto"> 
                                 </TextBox>
-
                             </Grid>
                         </Border>
-
                         <!-- Hover effect -->
                         <ControlTemplate.Triggers>
 
@@ -100,6 +91,10 @@
                                 <Setter Property="Background" TargetName="background" Value="{StaticResource WordVeryLightBlueBrush}"/>
                             </DataTrigger>
 
+                            <EventTrigger RoutedEvent="MouseDown">
+                                
+                            </EventTrigger>
+                                
                             <EventTrigger RoutedEvent="MouseEnter">
                                 <BeginStoryboard>
                                     <Storyboard>

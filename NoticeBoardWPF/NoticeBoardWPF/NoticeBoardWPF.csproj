@@ -61,8 +61,8 @@
     <Compile Include="Controls\MessageListItemControl.xaml.cs">
       <DependentUpon>MessageListItemControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\TopMenu.xaml.cs">
-      <DependentUpon>TopMenu.xaml</DependentUpon>
+    <Compile Include="Controls\WindowControler.xaml.cs">
+      <DependentUpon>WindowControler.xaml</DependentUpon>
     </Compile>
     <Compile Include="Temp.cs" />
     <Compile Include="ViewModel\Design\MessageListDesignModel.cs" />
@@ -77,7 +77,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\TopMenu.xaml">
+    <Page Include="Controls\WindowControler.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
