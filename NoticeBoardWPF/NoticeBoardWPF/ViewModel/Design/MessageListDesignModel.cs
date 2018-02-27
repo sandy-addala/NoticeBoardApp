@@ -28,9 +28,10 @@ namespace NoticeBoardWPF
             {
                 new MessageListItemViewModel
                 {
-                    Name = "Luke",
-                    Initials = "LM",
-                    Subject = "This chat app is awesome! I bet it will be fast too",
+                    Name = "SaiLata Kanumuri",
+                    Initials = "SK",
+                    Subject = "Session Topics",
+                    Message ="1.EF\n2.ADO.NET\n3.Disconnected MOdel\n4.fasdf",
                     ProfilePictureRGB = "#3099c5",
                     PriorityRGB = "#D00000"
                 },

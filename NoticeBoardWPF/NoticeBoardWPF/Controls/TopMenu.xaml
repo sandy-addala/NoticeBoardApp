@@ -31,7 +31,7 @@
 
                         <!-- Main buttons -->
                         <StackPanel Orientation="Horizontal">
-                            <Button Style="{StaticResource IconButton}" Content="1" />
+                            <Button Style="{StaticResource IconButton}" Content="Social" />
                             <Button Style="{StaticResource IconButton}" Content="2" />
                             <Button Style="{StaticResource IconButton}" Content="3" />
                         </StackPanel>

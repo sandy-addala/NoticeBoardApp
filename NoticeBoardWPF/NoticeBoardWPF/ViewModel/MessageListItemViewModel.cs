@@ -18,6 +18,8 @@ namespace NoticeBoardWPF
         /// </summary>
         public string Subject { get; set; }
 
+        public string Message { get; set; }
+
         /// <summary>
         /// The initials to show for the profile picture background
         /// </summary>
