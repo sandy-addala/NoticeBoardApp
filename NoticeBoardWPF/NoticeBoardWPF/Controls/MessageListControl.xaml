@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:NoticeBoardWPF"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid  Background="{StaticResource ForegroundLightBrush}">
+    <Grid DataContext="{x:Static local:MessageListDesignModel.Instance}" Background="{StaticResource ForegroundLightBrush}">
         <ScrollViewer VerticalScrollBarVisibility="Auto">
             <ItemsControl ItemsSource="{Binding Items}">
                 <ItemsControl.ItemTemplate>

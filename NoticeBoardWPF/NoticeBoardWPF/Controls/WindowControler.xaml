@@ -26,16 +26,18 @@
                         <!-- Main buttons -->
                         <StackPanel Orientation="Horizontal">
                             <Button Style="{StaticResource IconButton}" Content="Social" />
-                            <Button Style="{StaticResource IconButton}" Content="2" />
-                            <Button Style="{StaticResource IconButton}" Content="3" />
+                            <Button Style="{StaticResource IconButton}" Content="Tab1" />
+                            <Button Style="{StaticResource IconButton}" Content="Tab2" />
                         </StackPanel>
                         <!-- Settings button -->
-                        <Button Grid.Column="2" Foreground="{StaticResource WordDarkBlueBrush}" Style="{StaticResource IconButton}" Content="4" />
+                        <Button Grid.Column="2" Foreground="{StaticResource WordDarkBlueBrush}" Style="{StaticResource IconButton}" Content="Settings" />
                     </Grid>
                     <!-- The user content -->
                     <ContentPresenter Grid.Row="1" />
                 </Grid>
+                
             </Border>
+            
         </ControlTemplate>
     </UserControl.Template>
 </UserControl>

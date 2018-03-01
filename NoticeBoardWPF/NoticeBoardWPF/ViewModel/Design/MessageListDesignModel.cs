@@ -19,9 +19,6 @@ namespace NoticeBoardWPF
 
         #region Constructor
 
-        /// <summary>
-        /// Default constructor
-        /// </summary>
         public MessageListDesignModel()
         {
             Items = new List<MessageListItemViewModel>
