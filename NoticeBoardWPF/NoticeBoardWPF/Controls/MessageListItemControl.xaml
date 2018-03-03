@@ -29,7 +29,7 @@
                                     <ColumnDefinition Width="Auto" />
                                 </Grid.ColumnDefinitions>
                                 <!-- Priority -->
-                                <Border Grid.RowSpan="2" Background="{Binding PriorityRGB}" 
+                                <Border x:Name="priority" Grid.RowSpan="2" Background="{Binding PriorityRGB}" 
                                     Width="5"
                                     HorizontalAlignment="Left"
                                     />
@@ -91,9 +91,14 @@
                                 <Setter Property="Background" TargetName="background" Value="{StaticResource WordVeryLightBlueBrush}"/>
                             </DataTrigger>
 
-                            <EventTrigger RoutedEvent="MouseDown">
-
+                            <EventTrigger RoutedEvent="Mouse.MouseDown">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation To="DarkOrange" Storyboard.TargetName="priority" Storyboard.TargetProperty="Background.Color"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
                             </EventTrigger>
+
 
                             <EventTrigger RoutedEvent="MouseEnter">
                                 <BeginStoryboard>

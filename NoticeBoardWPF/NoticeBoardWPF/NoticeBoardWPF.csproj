@@ -64,7 +64,6 @@
     <Compile Include="Controls\WindowControler.xaml.cs">
       <DependentUpon>WindowControler.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Temp.cs" />
     <Compile Include="ViewModel\Design\MessageListDesignModel.cs" />
     <Compile Include="ViewModel\Design\MessageListItemDesignModel.cs" />
     <Compile Include="ViewModel\MessageListItemViewModel.cs" />
