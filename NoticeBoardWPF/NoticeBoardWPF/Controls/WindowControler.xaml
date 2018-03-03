@@ -15,6 +15,7 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="*" />
+                        <!--<RowDefinition Height="15" />-->
                     </Grid.RowDefinitions>
                     <!-- Top Menu -->
                     <Grid Height="50" Background="{StaticResource WordBlueBrush}">
