@@ -24,7 +24,9 @@
                                     <!-- Profile picture -->
                                     <ColumnDefinition Width="Auto" />
                                     <!-- The Name and Subject -->
-                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="9*" />
+                                    <!--for the read-->
+                                    <ColumnDefinition Width="1*" />
                                     <!-- Date and Time -->
                                     <ColumnDefinition Width="Auto" />
                                 </Grid.ColumnDefinitions>
@@ -60,8 +62,15 @@
                                                    Foreground="{StaticResource ForegroundDarkBrush}"/>
                                     </StackPanel>
                                 </Border>
+                                <!--for the read and unread-->
+                                <Border Grid.Column="2" >
+                                    <Border  Background="{StaticResource WordBlueBrush}" 
+                                        Width="8" Height="8"
+                                        Name="newMeassage" CornerRadius="8">
+                                    </Border>
+                                </Border>
                                 <!-- Date and Time -->
-                                <Border Grid.Column="2" Padding="0 0 8 0">
+                                <Border Grid.Column="3" Padding="0 0 8 0">
                                     <StackPanel VerticalAlignment="Center">
                                         <!-- Date -->
                                         <TextBlock Text="{Binding Date, FallbackValue=10/2/18}"
@@ -78,7 +87,7 @@
                                     </StackPanel>
                                 </Border>
                                 <!-- Meassage -->
-                                <TextBox Padding="12 0 0 0" Grid.Row="1" Grid.ColumnSpan="3"
+                                <TextBox Padding="12 0 0 0" Grid.Row="1" Grid.ColumnSpan="4"
                                          TextWrapping="Wrap" Text="{Binding Message}" IsReadOnly="True"
                                          VerticalScrollBarVisibility="Auto">
                                 </TextBox>
@@ -94,7 +103,7 @@
                             <EventTrigger RoutedEvent="Mouse.MouseDown">
                                 <BeginStoryboard>
                                     <Storyboard>
-                                        <ColorAnimation To="DarkOrange" Storyboard.TargetName="priority" Storyboard.TargetProperty="Background.Color"/>
+                                        <ColorAnimation To="Transparent" Storyboard.TargetName="newMessage" Storyboard.TargetProperty="Background.Color"/>
                                     </Storyboard>
                                 </BeginStoryboard>
                             </EventTrigger>
@@ -126,6 +135,8 @@
     </UserControl.Resources>
 
     <ContentControl d:DataContext="{x:Static local:MessageListItemDesignModel.Instance}"
-                    Style="{StaticResource ContentStyle}" />
+                    Style="{StaticResource ContentStyle}" >
+       
+    </ContentControl>
 
 </UserControl>
