@@ -81,7 +81,7 @@
                                         <!-- Time -->
                                         <TextBlock Text="{Binding Time, FallbackValue=10:24}"
                                                    Foreground="{StaticResource WordBlueBrush}"
-                                                   VerticalAlignment="Center"
+                                                   VerticalAlignment="Center" 
                                                    HorizontalAlignment="Center"
                                                />
                                     </StackPanel>
@@ -96,11 +96,15 @@
                         <!-- Hover effect -->
                         <ControlTemplate.Triggers>
 
-                            <DataTrigger Binding="{Binding IsSelected}" Value="True">
-                                <Setter Property="Background" TargetName="background" Value="{StaticResource WordVeryLightBlueBrush}"/>
-                            </DataTrigger>
-
                             <EventTrigger RoutedEvent="Mouse.MouseDown">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation To="Transparent" Storyboard.TargetName="newMessage" Storyboard.TargetProperty="Background.Color"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+
+                            <EventTrigger RoutedEvent="TextBox.GotFocus">
                                 <BeginStoryboard>
                                     <Storyboard>
                                         <ColorAnimation To="Transparent" Storyboard.TargetName="newMessage" Storyboard.TargetProperty="Background.Color"/>
@@ -116,6 +120,7 @@
                                     </Storyboard>
                                 </BeginStoryboard>
                             </EventTrigger>
+
                             <EventTrigger RoutedEvent="MouseLeave">
                                 <BeginStoryboard>
                                     <Storyboard>
@@ -123,9 +128,6 @@
                                     </Storyboard>
                                 </BeginStoryboard>
                             </EventTrigger>
-                            <Trigger Property="IsEnabled" Value="False">
-                                <Setter Property="Background" TargetName="container" Value="{StaticResource ForegroundDarkBrush}"/>
-                            </Trigger>
                         </ControlTemplate.Triggers>
 
                     </ControlTemplate>

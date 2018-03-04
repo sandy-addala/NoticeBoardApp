@@ -22,7 +22,7 @@ namespace NoticeBoardWPF
         public MessageListItemDesignModel()
         {
             Initials = "SK";
-            Sender = new User() { Name = "Sai Lata Kanumuri"};
+            Sender = new User() { Name = "SaiLatha Kanumuri"};
             Subject = "Session Topics";
             ProfilePictureRGB = "#3099c5";
         }
